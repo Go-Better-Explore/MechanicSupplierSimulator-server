@@ -12,6 +12,7 @@
         <module>item-model</module>
         <module>item-dao</module>
         <module>item-logic</module>
+        <module>item-web</module>
     </modules>
 
     <properties>

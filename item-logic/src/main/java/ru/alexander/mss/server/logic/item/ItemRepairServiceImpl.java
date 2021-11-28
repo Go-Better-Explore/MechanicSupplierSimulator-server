@@ -1,6 +1,7 @@
 package ru.alexander.mss.server.logic.item;
 
 import lombok.RequiredArgsConstructor;
+import lombok.val;
 import org.springframework.stereotype.Service;
 import ru.alexander.mss.server.model.item.entity.Item;
 import ru.alexander.mss.server.repository.item.ItemRepository;
@@ -16,5 +17,12 @@ class ItemRepairServiceImpl implements ItemRepairService {
     public Item repair(Item item) {
         item.setCondition(MAX_CONDITION);
         return repository.save(item);
+    }
+
+    @Override
+    public Item repair(String key) {
+        val item = repository.findById(key);
+        item.map(this::repair);
+        return item.orElse(null);
     }
 }
