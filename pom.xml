@@ -11,6 +11,7 @@
     <modules>
         <module>item-model</module>
         <module>item-dao</module>
+        <module>item-logic</module>
     </modules>
 
     <properties>
